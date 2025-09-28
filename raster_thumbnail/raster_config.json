@@ -1,0 +1,113 @@
+{
+  "raster_types": {
+    "lai": {
+      "name": "Leaf Area Index",
+      "description": "LAI raster data from satellite imagery",
+      "unit": "LAI Value",
+      "colormap": "Greens",
+      "visualization": {
+        "min_value": 0,
+        "max_value": 6,
+        "use_percentile": false
+      },
+      "metadata_detection": {
+        "filename_patterns": [
+          "*LAI*",
+          "*lai*",
+          "*leaf_area*"
+        ]
+      }
+    },
+    "ndvi": {
+      "name": "Normalized Difference Vegetation Index",
+      "description": "NDVI vegetation index",
+      "unit": "NDVI Value",
+      "colormap": "RdYlGn",
+      "visualization": {
+        "min_value": -1,
+        "max_value": 1,
+        "use_percentile": false
+      },
+      "metadata_detection": {
+        "filename_patterns": [
+          "*NDVI*",
+          "*ndvi*"
+        ]
+      }
+    },
+    "ccc": {
+      "name": "Canopy Chlorophyll Content",
+      "description": "CCC raster data from satellite imagery",
+      "unit": "μg/cm²",
+      "colormap": "plasma",
+      "visualization": {
+        "min_value": 0,
+        "max_value": 100,
+        "use_percentile": false
+      },
+      "metadata_detection": {
+        "filename_patterns": [
+          "*Ccc*",
+          "*CCC*",
+          "*ccc*",
+          "*chlorophyll*"
+        ]
+      }
+    },
+    "cdmc": {
+      "name": "Canopy Dry Matter Content",
+      "description": "CDMC raster data from satellite imagery",
+      "unit": "g/cm²",
+      "colormap": "YlOrBr",
+      "visualization": {
+        "min_value": 0,
+        "max_value": 0.01,
+        "use_percentile": false
+      },
+      "metadata_detection": {
+        "filename_patterns": [
+          "*Cdmc*",
+          "*CDMC*",
+          "*cdmc*",
+          "*dry_matter*"
+        ]
+      }
+    },
+    "psri": {
+      "name": "Plant Senescence Reflectance Index",
+      "description": "PSRI vegetation senescence index",
+      "unit": "PSRI Value",
+      "colormap": "autumn",
+      "visualization": {
+        "min_value": -1,
+        "max_value": 1,
+        "use_percentile": false
+      },
+      "metadata_detection": {
+        "filename_patterns": [
+          "*PSRI*",
+          "*psri*",
+          "*senescence*"
+        ]
+      }
+    },
+    "soil_moisture": {
+      "name": "Soil Moisture",
+      "description": "Soil moisture content data",
+      "unit": "m³/m³",
+      "colormap": "Blues",
+      "visualization": {
+        "min_value": 0,
+        "max_value": 0.5,
+        "use_percentile": false
+      },
+      "metadata_detection": {
+        "filename_patterns": [
+          "*soil_moisture*",
+          "*SM*",
+          "*moisture*"
+        ]
+      }
+    }
+  }
+}

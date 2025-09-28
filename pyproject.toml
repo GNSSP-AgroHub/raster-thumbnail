@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "raster-thumbnail"
+version = "0.1.0"
+description = "A Python library for generating thumbnail images from various types of raster files with automatic type detection"
+readme = "README.md"
+license = {text = "Proprietary"}
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+    "Topic :: Multimedia :: Graphics :: Graphics Conversion",
+]
+keywords = [
+    "raster",
+    "thumbnail",
+    "geospatial",
+    "satellite",
+    "remote-sensing",
+    "LAI",
+    "NDVI",
+    "visualization"
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.20.0",
+    "rasterio>=1.2.0",
+    "matplotlib>=3.3.0",
+    "Pillow>=8.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov",
+    "black",
+    "flake8",
+    "autoflake",
+    "autopep8",
+    "mypy",
+    "pre-commit",
+    "isort",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/raster-thumbnail"
+Repository = "https://github.com/yourusername/raster-thumbnail"
+Issues = "https://github.com/yourusername/raster-thumbnail/issues"
+
+[project.scripts]
+raster-thumbnail = "raster_thumbnail.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["raster_thumbnail*"]
+
+[tool.setuptools.package-data]
+raster_thumbnail = ["*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short --strict-markers"
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "integration: marks tests as integration tests"
+]
+
+[tool.black]
+line-length = 90
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.pytest_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | raster_thumbnail\.egg-info
+)/
+'''
