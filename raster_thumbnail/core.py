@@ -293,22 +293,15 @@ def create_thumbnail(
     )
 
     # Create figure
-    fig, (ax1, ax2) = plt.subplots(
-        1, 2, figsize=(8, 4), gridspec_kw={"width_ratios": [4, 0.2]}
-    )
+    fig, ax1 = plt.subplots(1, 1, figsize=(4, 4))
 
     # Plot the data using actual physical values with proper nodata handling
     value_min, value_max = vis_range
-    im = ax1.imshow(
+    ax1.imshow(
         visualization_data, cmap=colormap, aspect="equal", vmin=value_min, vmax=value_max
     )
 
-    ax1.set_title(f"{raster_name} Thumbnail", fontsize=10)
     ax1.axis("off")
-
-    # Create colorbar with direct physical values (matplotlib handles ticks automatically)
-    cbar = plt.colorbar(im, cax=ax2)
-    cbar.set_label(unit_label, fontsize=8)
 
     # Tight layout
     fig.tight_layout()
