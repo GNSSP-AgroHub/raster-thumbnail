@@ -147,9 +147,7 @@ def read_raster(
                 raise ValueError(f"No offset found in raster metadata for {file_path}")
 
             logger.info(
-                "Raster metadata - Scale: {}, Offset: {}, Nodata: {}".format(
-                    scale, offset, nodata_value
-                )
+                f"Raster metadata - Scale: {scale}, Offset: {offset}, Nodata: {nodata_value}"
             )
             logger.debug(f"Raster size: {data.shape}, Data type: {data.dtype}")
 
@@ -184,8 +182,7 @@ def convert_to_physical_values(
 
     logger.debug(f"Raw data range: {np.min(valid_data)} to {np.max(valid_data)}")
     logger.debug(
-        f"Valid pixels: {
-            len(valid_data)}/{data.size} ({len(valid_data)/data.size*100:.1f}%)"
+        f"Valid pixels: {len(valid_data)}/{data.size} ({len(valid_data)/data.size*100:.1f}%)"
     )
 
     # Apply scale and offset from metadata
