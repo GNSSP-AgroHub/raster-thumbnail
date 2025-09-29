@@ -147,8 +147,9 @@ def read_raster(
                 raise ValueError(f"No offset found in raster metadata for {file_path}")
 
             logger.info(
-                f"Raster metadata - Scale: {scale}, Offset: {
-                    offset}, Nodata: {nodata_value}"
+                "Raster metadata - Scale: {}, Offset: {}, Nodata: {}".format(
+                    scale, offset, nodata_value
+                )
             )
             logger.debug(f"Raster size: {data.shape}, Data type: {data.dtype}")
 

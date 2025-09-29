@@ -154,8 +154,9 @@ def process_directory(
 
         if not raster_files:
             logger.error(
-                f"No raster files found in '{
-                    input_dir}' matching pattern '{file_pattern}'"
+                "No raster files found in '{}' matching pattern '{}'".format(
+                    input_dir, file_pattern
+                )
             )
             return {"successful": 0, "failed": 1, "skipped": 0}
 

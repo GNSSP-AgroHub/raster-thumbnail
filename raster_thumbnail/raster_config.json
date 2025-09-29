@@ -98,7 +98,7 @@
       "colormap": "Blues",
       "visualization": {
         "min_value": 0,
-        "max_value": 0.5,
+        "max_value": 0.6,
         "use_percentile": false
       },
       "metadata_detection": {
