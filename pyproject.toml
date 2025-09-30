@@ -57,16 +57,15 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/raster-thumbnail"
-Repository = "https://github.com/yourusername/raster-thumbnail"
-Issues = "https://github.com/yourusername/raster-thumbnail/issues"
+Homepage = "https://github.com/GNSSP-AgroHub/raster-thumbnail"
+Repository = "https://github.com/GNSSP-AgroHub/raster-thumbnail"
+Issues = "https://github.com/GNSSP-AgroHub/raster-thumbnail/issues"
 
 [project.scripts]
 raster-thumbnail = "raster_thumbnail.cli:main"
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["raster_thumbnail*"]
+[tool.setuptools]
+packages = ["raster_thumbnail"]
 
 [tool.setuptools.package-data]
 raster_thumbnail = ["*.json"]
